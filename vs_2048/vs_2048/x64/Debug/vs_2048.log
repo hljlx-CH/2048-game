@@ -1,0 +1,4 @@
+﻿  2048.cpp
+E:\Project\VS\vs_2048\2048.cpp(66,13): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+E:\Project\VS\vs_2048\2048.cpp(433,1): warning C4326: “main”的返回类型应为“int”而非“void”
+  vs_2048.vcxproj -> E:\Project\VS\vs_2048\x64\Debug\vs_2048.exe
