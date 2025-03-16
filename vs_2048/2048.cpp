@@ -377,7 +377,7 @@ void getkeyboard1()
 }
 
 //¿ØÖÆÌ¨ÊäÈë
-void getkeyboard2()
+void getkeyboard5()
 {
 	while (IsWindow(window))
 	{
