@@ -1,15 +1,15 @@
-/*	µÚÒ»²½£ºÊı×é´òÓ¡+ÒÆ¶¯ºÏ²¢º¯Êı±àĞ´
-	µÚ¶ş²½£ºËæ»úÊıµÄÉú³É+»ñÈ¡¿ÕÎ»ÊıÁ¿ÓëĞĞÁĞº¯Êı±àĞ´
-	µÚÈı²½£º¸ñ×ÓÊÇ·ñÒÑÂú+ÏàÁÚÊı×ÖÊÇ·ñ»¹ÄÜ¼ÌĞøºÏ²¢+ÓÎÏ·½áÊø+ÓÎÏ·³É¹¦µÄº¯Êı±àĞ´
-	µÚËÄ²½£º³õÊ¼»¯ÓÎÏ·½çÃæ+½«Í¼Æ¬ÓëÊı×Ö¶ÔÓ¦ÆğÀ´
-	µÚÎå²½£ºÊµÏÖ°´¼ü²Ù×÷
+/*	ç¬¬ä¸€æ­¥ï¼šæ•°ç»„æ‰“å°+ç§»åŠ¨åˆå¹¶å‡½æ•°ç¼–å†™
+	ç¬¬äºŒæ­¥ï¼šéšæœºæ•°çš„ç”Ÿæˆ+è·å–ç©ºä½æ•°é‡ä¸è¡Œåˆ—å‡½æ•°ç¼–å†™
+	ç¬¬ä¸‰æ­¥ï¼šæ ¼å­æ˜¯å¦å·²æ»¡+ç›¸é‚»æ•°å­—æ˜¯å¦è¿˜èƒ½ç»§ç»­åˆå¹¶+æ¸¸æˆç»“æŸ+æ¸¸æˆæˆåŠŸçš„å‡½æ•°ç¼–å†™
+	ç¬¬å››æ­¥ï¼šåˆå§‹åŒ–æ¸¸æˆç•Œé¢+å°†å›¾ç‰‡ä¸æ•°å­—å¯¹åº”èµ·æ¥
+	ç¬¬äº”æ­¥ï¼šå®ç°æŒ‰é”®æ“ä½œ
 
-	ÁÁµã£º»ñÈ¡¿ÕÎ»ĞĞÁĞµÄË¼Â·¡¢ÅĞ¶ÏÏàÁÚÊı×ÖÊÇ·ñ¿É¼ÌĞøºÏ²¢µÄË¼Â·
+	äº®ç‚¹ï¼šè·å–ç©ºä½è¡Œåˆ—çš„æ€è·¯ã€åˆ¤æ–­ç›¸é‚»æ•°å­—æ˜¯å¦å¯ç»§ç»­åˆå¹¶çš„æ€è·¯
 
-	Ğè¼ÓÑ§Ï°µÄµã£ºÖ¸Õë¡¢½á¹¹Ìå
+	éœ€åŠ å­¦ä¹ çš„ç‚¹ï¼šæŒ‡é’ˆã€ç»“æ„ä½“
 */
 
-//´ËÁ½ĞĞ´úÂëµÄ×÷ÓÃÔÚÓÚµ±ÊäÈë×Ö·û´®ÊÇÎŞĞèÔÚ×ª»»ÆäÀàĞÍ£¬¸ºÔğĞèÒªÕâÑùÊäÈë_T("ºÚÌå")
+//æ­¤ä¸¤è¡Œä»£ç çš„ä½œç”¨åœ¨äºå½“è¾“å…¥å­—ç¬¦ä¸²æ˜¯æ— éœ€åœ¨è½¬æ¢å…¶ç±»å‹ï¼Œè´Ÿè´£éœ€è¦è¿™æ ·è¾“å…¥_T("é»‘ä½“")
 #undef UNICODE
 #undef _UNICODE			
 
@@ -20,16 +20,16 @@
 #include <easyx.h>
 #include <conio.h>
 
-//´°¿Ú¾ä±ú
+//çª—å£å¥æŸ„
 HWND window;
 
-//¶¨ÒåÊı×é
+//å®šä¹‰æ•°ç»„
 int array[4][4] = {0};
 
-int nullcount;				//¼ÇÂ¼¿ÕÎ»ÊıÁ¿
-int nullpos[2][16] = {0};	//¼ÇÂ¼¿ÕÎ»µÄĞĞÁĞÎ»ÖÃµÄÊı×é
+int nullcount;				//è®°å½•ç©ºä½æ•°é‡
+int nullpos[2][16] = {0};	//è®°å½•ç©ºä½çš„è¡Œåˆ—ä½ç½®çš„æ•°ç»„
 
-//´òÓ¡Êı×éº¯Êı
+//æ‰“å°æ•°ç»„å‡½æ•°
 void printfarray()
 {
 	for (int row = 0; row < 4; row++)
@@ -42,7 +42,7 @@ void printfarray()
 	}
 }
 
-//»ñÈ¡¿ÕÎ»µÄĞĞÁĞ
+//è·å–ç©ºä½çš„è¡Œåˆ—
 int getnullpos()
 {
 	nullcount = 0;
@@ -50,15 +50,15 @@ int getnullpos()
 		for (int column = 0; column < 4; column++)
 			if (array[row][column] == 0)
 			{
-				nullpos[0][nullcount] = row;		//Öü´æ¿ÕÎ»ĞĞ
-				nullpos[1][nullcount] = column;		//Öü´æ¿ÕÎ»ÁĞ
+				nullpos[0][nullcount] = row;		//è´®å­˜ç©ºä½è¡Œ
+				nullpos[1][nullcount] = column;		//è´®å­˜ç©ºä½åˆ—
 				nullcount++;
 			}
 	return nullcount;
 
 }
 
-//Ëæ»úÊıµÄÉú³É
+//éšæœºæ•°çš„ç”Ÿæˆ
 void creatranddate(int count)
 {
 	if (getnullpos() != 0)
@@ -69,14 +69,14 @@ void creatranddate(int count)
 			int pos = rand() % nullcount;
 			int row = nullpos[0][pos];
 			int column = nullpos[1][pos];
-			if (array[row][column] != 0)	i--;		//±ÜÃâµ±Éú³É¶à¸öËæ»úÊıµÄÊ±ºòÔÚÍ¬Ò»Î»ÖÃ¶à´ÎÉú³É
+			if (array[row][column] != 0)	i--;		//é¿å…å½“ç”Ÿæˆå¤šä¸ªéšæœºæ•°çš„æ—¶å€™åœ¨åŒä¸€ä½ç½®å¤šæ¬¡ç”Ÿæˆ
 			array[row][column] = (rand() % 2 + 1) * 2;
 		}
 	}
 
 }
 	
-//×óÒÆ+ºÏ²¢º¯Êı
+//å·¦ç§»+åˆå¹¶å‡½æ•°
 void left()
 {
 	for (int row = 0; row < 4; row++)
@@ -113,7 +113,7 @@ void left()
 	creatranddate(1);
 }
 
-//ÓÒÒÆ+ºÏ²¢º¯Êı
+//å³ç§»+åˆå¹¶å‡½æ•°
 void right()
 {
 	for (int row = 0; row < 4; row++)
@@ -149,7 +149,7 @@ void right()
 	creatranddate(1);
 }
 
-//ÉÏÒÆ+ºÏ²¢º¯Êı
+//ä¸Šç§»+åˆå¹¶å‡½æ•°
 void up()
 {
 	for (int column = 0; column < 4; column++)
@@ -185,7 +185,7 @@ void up()
 	creatranddate(1);
 }
 
-//ÏÂÒÆ+ºÏ²¢º¯Êı
+//ä¸‹ç§»+åˆå¹¶å‡½æ•°
 void down()
 {
 	for (int column = 0; column < 4; column++)
@@ -220,7 +220,7 @@ void down()
 	creatranddate(1);
 }
 
-//¼ì²â16¸ö¸ñ×ÓÊÇ·ñÒÔ¼°ÂúÁË¡ª¡ªÓĞ¿Õ·µ»Ø1£¬Ã»ÓĞ¿Õ·µ»Ø0£»
+//æ£€æµ‹16ä¸ªæ ¼å­æ˜¯å¦ä»¥åŠæ»¡äº†â€”â€”æœ‰ç©ºè¿”å›1ï¼Œæ²¡æœ‰ç©ºè¿”å›0ï¼›
 int isfull()
 {
 	for (int row = 0; row < 4; row++)
@@ -230,13 +230,13 @@ int isfull()
 	return 0;
 }
 
-//¼ì²âÊÇ·ñ»¹º¬ÓĞ¿ÉÒÔºÏ²¢µÄÊı×Ö,ÓĞ¿ÉºÏ²¢µÄ·µ»Ø1£¬Ã»ÓĞ¿ÉÒÔºÏ²¢µÄÊıÊ±·µ»Ø0
+//æ£€æµ‹æ˜¯å¦è¿˜å«æœ‰å¯ä»¥åˆå¹¶çš„æ•°å­—,æœ‰å¯åˆå¹¶çš„è¿”å›1ï¼Œæ²¡æœ‰å¯ä»¥åˆå¹¶çš„æ•°æ—¶è¿”å›0
 int ismerge()
 {
 	for (int row = 0; row < 4; row++)
 		for (int column = 0; column < 4; column++)
 			if ((row + 1 < 4) && (array[row][column] == array[row + 1][column]) ||
-				(array[row][column] == array[row][column + 1])&&(column + 1 <4))		//·ÇµÄÓÅÏÈ¼¶>»ò
+				(array[row][column] == array[row][column + 1])&&(column + 1 <4))		//éçš„ä¼˜å…ˆçº§>æˆ–
 				return 1;
 	return 0;
 }
@@ -246,8 +246,8 @@ int gameover()
 	if ((isfull() == 0) && (ismerge() == 0))
 	{
 		settextcolor(WHITE);
-		settextstyle(100, 0, _T("ºÚÌå"));
-		outtextxy(20, 200, _T("ÓÎÏ·½áÊø"));
+		settextstyle(100, 0, _T("é»‘ä½“"));
+		outtextxy(20, 200, _T("æ¸¸æˆç»“æŸ"));
 		return 1;
 	}
 
@@ -264,8 +264,8 @@ int gamesussce()
 			{
 
 				settextcolor(WHITE);
-				settextstyle(100, 0, _T("ºÚÌå"));
-				outtextxy(20, 200, _T("³É¹¦ºÏ³É"));
+				settextstyle(100, 0, _T("é»‘ä½“"));
+				outtextxy(20, 200, _T("æˆåŠŸåˆæˆ"));
 				return 1;
 			}
 
@@ -276,18 +276,18 @@ int gamesussce()
 
 }
 
-//ÓÃeasyx²å¼ş³õÊ¼»¯ÓÎÏ·½çÃæ
+//ç”¨easyxæ’ä»¶åˆå§‹åŒ–æ¸¸æˆç•Œé¢
 void initwindow()
 {
 	initgraph(450, 550, EX_SHOWCONSOLE);
 //	window = initgraph(450, 550, EX_SHOWCONSOLE);
 	window = GetHWnd();
 
-	SetWindowText(window, "2048Ğ¡ÓÎÏ·");
+	SetWindowText(window, "2048å°æ¸¸æˆ");
 
 	settextcolor(RED);
-	settextstyle(60,0,"·ÂËÎ");		
-	outtextxy(60,0, "2048Ğ¡ÓÎÏ·");	
+	settextstyle(60,0,"ä»¿å®‹");		
+	outtextxy(60,0, "2048å°æ¸¸æˆ");	
 }
 
 void number_link_picture()
@@ -341,8 +341,8 @@ void number_link_picture()
 		}
 }
 
-//»ñÈ¡°´¼ü×´Ì¬
-//´°¿ÚÊäÈë
+//è·å–æŒ‰é”®çŠ¶æ€
+//çª—å£è¾“å…¥
 void getkeyboard1()
 {
 	while (IsWindow(window))
@@ -353,9 +353,9 @@ void getkeyboard1()
 		{
 			ExMessage msg;
 
-			if (false == peekmessage(&msg))//peekmessageº¯ÊıÎŞÂÛÊÇ·ñÓĞÏûÏ¢¶¼»á·µ»Ø£¬´Ëº¯ÊıÊÇÔÚ´°¿ÚÊäÈëÊ±ÓĞĞ§
+			if (false == peekmessage(&msg))//peekmessageå‡½æ•°æ— è®ºæ˜¯å¦æœ‰æ¶ˆæ¯éƒ½ä¼šè¿”å›ï¼Œæ­¤å‡½æ•°æ˜¯åœ¨çª—å£è¾“å…¥æ—¶æœ‰æ•ˆ
 				continue;
-			if (msg.message == WM_KEYUP)//°´¼üÌ§ÆğÊ±¼ì²â
+			if (msg.message == WM_KEYUP)//æŒ‰é”®æŠ¬èµ·æ—¶æ£€æµ‹
 			{
 				switch (msg.vkcode)
 				{
@@ -376,8 +376,8 @@ void getkeyboard1()
 	}
 }
 
-//¿ØÖÆÌ¨ÊäÈë
-void getkeyboard5()
+//æ§åˆ¶å°è¾“å…¥
+void getkeyboard6()
 {
 	while (IsWindow(window))
 	{
@@ -387,7 +387,7 @@ void getkeyboard5()
 		{
 			if (_kbhit())
 			{
-				char key = _getch();//		ÉÏ-72£¬ÏÂ-80£¬×ó-75£¬ÓÒ-77£¬´Ëº¯ÊıÖ»ÓĞÔÚ¿ØÖÆÌ¨ÊäÈëÊ±²ÅÓĞÓÃ
+				char key = _getch();//		ä¸Š-72ï¼Œä¸‹-80ï¼Œå·¦-75ï¼Œå³-77ï¼Œæ­¤å‡½æ•°åªæœ‰åœ¨æ§åˆ¶å°è¾“å…¥æ—¶æ‰æœ‰ç”¨
 
 				switch (key)
 				{
@@ -415,5 +415,5 @@ void main()
 	initwindow();
 	number_link_picture();
 
-	getkeyboard1();//2048ÓÃ´Ëº¯Êı
+	getkeyboard1();//2048ç”¨æ­¤å‡½æ•°
 }
